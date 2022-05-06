@@ -1,0 +1,60 @@
+{
+  "name": "@particle/react-native-ble-setup-library",
+  "description": "React Native library for setting up BLE devices",
+  "version": "0.1.0",
+  "author": "Particle Industries, inc",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "version": "npm run changelog:update",
+    "build": "npm run clean:dist && tsc -p tsconfig.json",
+    "clean": "npm run clean:dist && npm run clean:modules",
+    "clean:dist": "rm -rf ./dist",
+    "clean:modules": "rm -rf ./node_modules",
+    "test": "npm run test:unit",
+    "test:unit": "jest --runInBand --color",
+    "test:unit:watch": "npm run test:unit -- --watch",
+    "test:unit:silent": "npm run test:unit > tmp/test-unit-log.txt 2>&1",
+    "changelog:update": "node ../../bin/update-changelog.js react-native-ble-setup-library",
+    "docs:build": "node ../../bin/build-docs.js react-native-ble-setup-library",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@particle/async-utils": "^3.0.2",
+    "@particle/device-os-protobuf": "^1.2.1",
+    "@particle/ecjpake": "^1.0.2",
+    "aes-js": "^3.1.2",
+    "buffer": "^6.0.3",
+    "events": "^3.3.0",
+    "fastestsmallesttextencoderdecoder": "^1.0.22",
+    "lodash": "^4.17.21",
+    "react-native-randombytes": "^3.6.1"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/react-native": "^7.2.0",
+    "@types/aes-js": "^3.1.1",
+    "@types/jest": "^26.0.23",
+    "@types/lodash": "^4.14.175",
+    "@types/react": "~17.0.21",
+    "@types/react-native": "~0.64.12",
+    "expo": "^43.0.0",
+    "jest-expo": "^43.0.0",
+    "react": "^17.0.1",
+    "react-native": "^0.64.3",
+    "react-native-ble-plx": "^2.0.3"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-native": "^0.64.3",
+    "react-native-ble-plx": "^2.0.3"
+  },
+  "engines": {
+    "node": ">=12",
+    "npm": "8.x"
+  }
+}
