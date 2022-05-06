@@ -21,7 +21,7 @@
     "test:unit:silent": "npm run test:unit > tmp/test-unit-log.txt 2>&1",
     "changelog:update": "node ../../bin/update-changelog.js react-native-ble-setup-library",
     "docs:build": "node ../../bin/build-docs.js react-native-ble-setup-library",
-    "prepare": "npm run build"
+    "/prepare": "npm run build"
   },
   "dependencies": {
     "@particle/async-utils": "^3.0.2",
